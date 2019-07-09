@@ -5,17 +5,6 @@
 //start game to be clicked
 
 //on screen keyboard to listen
-const logPhrase = (phrase) => {
-    console.log(`Phrase - phrase: `, Game.phrase);
-};
-const game = new Game();
-
-logPhrase (game.getRandomPhrase());
-logPhrase (game.getRandomPhrase());
-logPhrase (game.getRandomPhrase());
-logPhrase (game.getRandomPhrase());
-logPhrase (game.getRandomPhrase());
-
 
  btn__reset.addEventListener("click", function(e){
 

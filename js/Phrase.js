@@ -3,12 +3,13 @@
  * Phrase.js */
 class Phrase {
     constructor (phrase){
-        this.phrase = phrase
-        //add black boxes to display phrase
+        this.phrase = phrase;
+
+//add black boxes to display phrase
 //loop through 
     }
     addPhaseToDisplay() {
-    //     <ul>
+    }
     //     <li class="hide letter h">h</li>
     //     <li class="hide letter o">o</li>
     //     <li class="hide letter w">w</li>
@@ -21,8 +22,6 @@ class Phrase {
     //     <li class="hide letter o">o</li>
     //     <li class="hide letter u">u</li>
     // </ul>
-
-    }
 }
 //add phrase to display
 //check letter method ()

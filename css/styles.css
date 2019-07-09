@@ -203,6 +203,3 @@ button {
 .lose a {
   color: var(--color-lose);
 }
-.scrollable-element {
-  scrollbar-color: rgb(0, 4, 255) yellow;
-}

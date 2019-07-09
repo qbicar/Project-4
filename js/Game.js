@@ -17,9 +17,8 @@ class Game {
         this.activePhrase= `null`  ;
     }
     getRandomPhrase(){
-        let randomPhrases = this.phrases 
-        randomPhrases.map[Math.floor(Math.random()* this.phrases.length)] 
-       return console.log(phrase)
+        let randoPhrase = this.phrases[Math.floor(Math.random()* this.phrases.length)];
+        return randoPhrase;
     }
     
 }
