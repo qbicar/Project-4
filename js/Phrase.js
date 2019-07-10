@@ -3,13 +3,18 @@
  * Phrase.js */
 class Phrase {
     constructor (phrase){
-        this.phrase = phrase;
+        this.phrase = phrase.toLowerCase();
+    }
 
-//add black boxes to display phrase
-//loop through 
+    addPhraseToDisplay() {
+        for (let i = 0; i < this.phrase.length; i++){
+            let letter = this.phrase[i];
+        let letterPlacement = $(`<li class="hide letter">${letter}</li>`);
+        // let letterSpace = $(`<li class="space"> </li>`)
+        $('#phrase').append(letterPlacement);
+        }     
     }
-    addPhaseToDisplay() {
-    }
+}
     //     <li class="hide letter h">h</li>
     //     <li class="hide letter o">o</li>
     //     <li class="hide letter w">w</li>
@@ -22,7 +27,8 @@ class Phrase {
     //     <li class="hide letter o">o</li>
     //     <li class="hide letter u">u</li>
     // </ul>
-}
+//add black boxes to display phrase
+//loop through 
 //add phrase to display
 //check letter method ()
 //show matchedletter method ()

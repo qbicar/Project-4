@@ -5,9 +5,14 @@
 //start game to be clicked
 
 //on screen keyboard to listen
+const game = new Game();
+game.startGame();
+console.log(`Active phrase - phrase: ${game.activePhrase.phrase}`);
+//  const game = new Game();
 
- btn__reset.addEventListener("click", function(e){
-
+ btn__reset.addEventListener.on("click", function(e){
+     $('#overlay').show();
+     startGame ();
 });
 
 

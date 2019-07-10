@@ -20,7 +20,11 @@ class Game {
         let randoPhrase = this.phrases[Math.floor(Math.random()* this.phrases.length)];
         return randoPhrase;
     }
-    
+    startGame() {
+        $('#overlay').hide();
+        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();
+      }
 }
 
 //startgame()
