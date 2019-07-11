@@ -40,6 +40,8 @@ h2 {
   text-transform: uppercase;
   font-size: var(--font-size-large);
   margin: 0;
+
+
 }
 
 h1 {
@@ -87,6 +89,26 @@ button {
 
 .header {
   color: #3a3f58;
+}
+h2 span{
+  opacity: 0;
+  display: inline-block;
+  animation: animate 1s linear forwards;
+}
+@keyframes animate
+{
+  0%
+{
+opacity: 0;
+transform: rotateY(280deg);
+filter: blur(10px);
+}
+100%
+{
+opacity: 1;
+transform: rotateY(0deg);
+filter: blur(0px);
+}
 }
 
 
@@ -176,12 +198,13 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #FFF
 }
 
 .start {
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/A1rL6udG2dL._SY450_.jpg");
-  background-size: 1000px;
+  background-image: url("http://markinternational.info/data/out/424/222531337-fun-colorful-wallpaper.jpg");
+  background-size: 900px;
+  background-position: 10px;
 }
 
 .start a {
