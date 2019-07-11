@@ -103,7 +103,7 @@ opacity: 0;
 transform: rotateY(280deg);
 filter: blur(10px);
 }
-100%
+ 100%
 {
 opacity: 1;
 transform: rotateY(0deg);

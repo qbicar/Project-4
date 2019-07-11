@@ -14,7 +14,7 @@ class Game {
         new Phrase("Jupiter"),
         new Phrase("Black Hole"),
         new Phrase("Shooting Star")];
-        this.activePhrase= `null`  ;
+        this.activePhrase= 'null'  ;
     }
     getRandomPhrase(){
         let randoPhrase = this.phrases[Math.floor(Math.random()* this.phrases.length)];
@@ -25,12 +25,36 @@ class Game {
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
       }
+      handleInteraction(){
+        this.checkLetter();
+        this.showMatchedLetter();
+        this.checkForWin();
+        this.gameOver();
+      }
+      checkForWin(){
+        if (this.phrase < 0) {return true;}
+        {
+    } return false ;
+}
+      removeLife(){
+        let $lives = $('#scoreboard li');
+        let $lifeToRemove = $lives.eq(this.missed);
+        $lifeToRemove.attr('src','images/lostHeart.png') 
+        game.forEach(this.missed += 1);
+        if (this.missed === 5) {
+            this.gameOver()
+        }   
+    }     
+     gameOver(gameWon){
+        $('#overlay').show();
+        let $winner = $('#game-over-message').text("Congrats YOU WON!")
+        $('#overlay').replaceWith().css(win)
+        if (gameWon === $winner){
+            return true;
+        }
+
+
 }
 
-//startgame()
-
+}
 //reset method()
-//handleInteraction()
-//checkfor win()
-//remove life()
-//game over ()
