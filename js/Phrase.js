@@ -19,12 +19,11 @@ class Phrase {
         }     
     }
     checkLetter(guessed){
-
-           for (i =0; i < this.phrase.length; i++){
-               let phraseLetter = this.phrase[i]
+    for (let i = 0 ; i < this.phrase.length; i++){
+    let phraseLetter = this.phrase[i];
         if (guessed === phraseLetter){
-        return true;
-        }
+         return true;
+        }console.log(this.checkLetter);
     }
          return false; 
         
