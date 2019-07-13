@@ -198,7 +198,10 @@ filter: blur(0px);
 }
 
 .title {
-  color: #FFF
+  color: #FFF;
+  opacity: 0;
+  display: inline-block;
+  animation: animate 1s linear forwards;
 }
 
 .start {
@@ -220,7 +223,8 @@ filter: blur(0px);
 }
 
 .lose {
-  background-color: #f5785f;
+  background-image: url("https://www.androidguys.com/wp-content/uploads/2016/04/Colorful-Wallpaper-3D-GV004.jpg");
+  background-size: 1300px;
 }
 
 .lose a {

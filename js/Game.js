@@ -21,65 +21,83 @@ class Game {
         return randoPhrase;
     }
     startGame() {
+        //let lostLives = "img/lostHeart.png"
+        document.querySelectorAll(`img[src*=lost]`).forEach(lives => lives.src = "images/liveHeart.png")
+        // document.querySelectorAll(`button[disabled]`).forEach(button => {
+		// 	button.disabled = false;
+		// 	button.className = `key`;
+		// });
+    
         $('#overlay').hide();
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
+        
       }
-      handleInteraction(e){
-          let $guessed = $(e.target).text();
-          $(e.target).prop("disabled", true);
-        if (this.activePhrase.checkLetter($guessed)){
-            this.activePhrase.showMatchedLetter($guessed)
-            $(event.target).addClass('chosen');
-            if (this.checkForWin()){
-                this.gameOver();
-            }
-            } else{
-            this.removeLife();
-            $(e.target).addClass('wrong');
-        };
+      handleInteraction(guessed){
+        if (this.activePhrase.checkLetter()=== guessed){														//displayed else a life is removed
+			this.activePhrase.showMatchedLetter()=== guessed;
+			this.checkForWin();
+		} else
+			this.removeLife();
+        //  let guessed = $(e.target).text();
+       
+       //  $(e.target).prop("disabled", true);
+        //  if (this.activePhrase.checkLetter(guessed)){
+          
+        //     this.activePhrase.showMatchedLetter(guessed)
+            
+        //     $(event.target).addClass('chosen');
+        //     if (this.checkForWin()){
+        //         this.gameOver();
+        //     }
+        //     } else{
+        //     this.removeLife();
+        //     $(e.target).addClass('wrong');
+        // };
         // this.checkLetter();
-        this.showMatchedLetter();
-        this.checkForWin();
-        // this.removeLife();
-        this.gameOver();
-        this.resetGame();
+        // this.showMatchedLetter();
+        // this.checkForWin();
+        // // this.removeLife();
+        // this.gameOver();
+        // this.resetGame();
       }
       checkForWin(){
           let results = false;
         if (parseInt($('#phrase ul .hide').length) === 0){
-            this.gameOver();
+            this.gameOver(true);
            results = true;
         } 
             return results;
     }     
 
       removeLife(){
-        
+       
        const lives = $('#scoreboard li');
        const lostLives = "images/lostHeart.png";
-        let lifeToRemove = lives.eq(this.missed);
-        let newHeart = lifeToRemove.children().first();
-        newHeart.attr("src" , lostLives) ;
-        this.missed +=1; 
-        if (this.missed === 5) {
-        this.gameOver();
+        if (this.missed < 5) {
+            lives.eq(this.missed).children().attr("src",lostLives)
+            this.missed ++; }
+            else{
+        this.gameOver(false);
         }
     }
      gameOver(){
         $('#overlay').show();
         if (this.missed === 5){
-            $('#game-over-message').text("Sorry , TRY AGAIN!")
+            $('.title').text("Sorry , TRY AGAIN!")
+            $('#game-over-message').text("'Winners Never Quit'")
             overlay.className = "lose"
         } else {
-            $('#game-over-message').text("Congrats YOU WON!")
+            $('.title').text("Congrats YOU WON!")
+            $('#game-over-message').text("''")
             overlay.className = "win"
         }
-
+        
     }
     resetGame(){
-        $('#overlay').show();
-        $('#phrase ul').hide();
+        $('#overlay').className = "start";
+        //$('#phrase ul').hide();
+        //lostLives.attr("src" , lives) 
     }
 
 }

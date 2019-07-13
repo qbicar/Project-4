@@ -23,7 +23,7 @@ class Phrase {
     let phraseLetter = this.phrase[i];
         if (guessed === phraseLetter){
          return true;
-        }console.log(this.checkLetter);
+        }
     }
          return false; 
         
@@ -31,7 +31,7 @@ class Phrase {
     }
     showMatchedLetter(guessed){
        
-    let $rightLetter = $('#phrase ul .' + guessed)
+    let $rightLetter = $('#phrase ul .hide' + guessed)
     $rightLetter.removeClass('hide')
     $rightLetter.addClass('show')
         //revels the letter on the board
