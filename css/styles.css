@@ -153,14 +153,14 @@ filter: blur(0px);
 }
 
 .chosen {
-  background: #3a3f58;
+  background:pink;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background: red;
   color: #FFFFFF;
 }
 
@@ -215,7 +215,8 @@ filter: blur(0px);
 }
 
 .win {
-  background-color: var(--color-win);
+  background-image: url("https://insight.harlandclarke.com/wp-content/uploads/2014/03/birthday-balloons.jpg");
+  background-size: 1300px;
 }
 
 .win a {

@@ -8,12 +8,12 @@ class Phrase {
 
     addPhraseToDisplay() {
         for (let i = 0; i < this.phrase.length; i++){
-            let letter = this.phrase[i];
-            if (letter === ' ') 
+            let guessed = this.phrase[i];
+            if (guessed === ' ') 
          { const $letterSpace = $(`<li class="space"> </li>`)
          $('#phrase ul').append($letterSpace);
          } else {
-           const $letterPlacement = $(`<li class ="hide letter ${letter}" > ${letter}</li>`);
+           const $letterPlacement = $(`<li class ="hide letter ${guessed}" > ${guessed}</li>`);
         $('#phrase ul').append($letterPlacement);
         }
         }     
@@ -21,7 +21,7 @@ class Phrase {
     checkLetter(guessed){
     for (let i = 0 ; i < this.phrase.length; i++){
     let phraseLetter = this.phrase[i];
-        if (guessed === phraseLetter){
+        if (guessed === phraseLetter ){
          return true;
         }
     }
@@ -30,25 +30,8 @@ class Phrase {
         //if letter matches what is clicked
     }
     showMatchedLetter(guessed){
-       
-    let $rightLetter = $('#phrase ul .hide' + guessed)
-    $rightLetter.removeClass('hide')
-    $rightLetter.addClass('show')
-        //revels the letter on the board
-    }
-}
-// let $rightLetter = $('#phrase ul .' + guessed)
-// $rightLetter.removeClass('hide')
-// $rightLetter.addClass('show')
+const letter = document.querySelector(`.hide.${guessed}`);
+        letter.className = `show .letter ${guessed}`
 
-  // if (guessed == this.phrase){
-        //     $letterPlacement.show();
-        // }else{
-        //     $letterPlacement.hide();
-        // }
-
-
-//loop through 
-//add phrase to display
-//check letter method ()
-//show matchedletter method ()
+    };
+};

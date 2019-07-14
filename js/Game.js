@@ -21,55 +21,35 @@ class Game {
         return randoPhrase;
     }
     startGame() {
-        //let lostLives = "img/lostHeart.png"
+        $('#banner').show();
+        $('#phrase ul ').show();
         document.querySelectorAll(`img[src*=lost]`).forEach(lives => lives.src = "images/liveHeart.png")
-        // document.querySelectorAll(`button[disabled]`).forEach(button => {
-		// 	button.disabled = false;
-		// 	button.className = `key`;
-		// });
-    
+        document.querySelectorAll(`button[disabled]`).forEach(button => {
+			button.disabled = false;
+			button.className = `key`;
+        });
+        document.addEventListener('keyup', keyInt );
+    //make a variable for keys and change this.handleInteraction to variable
         $('#overlay').hide();
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
         
       }
       handleInteraction(guessed){
-        if (this.activePhrase.checkLetter()=== guessed){														//displayed else a life is removed
-			this.activePhrase.showMatchedLetter()=== guessed;
-			this.checkForWin();
-		} else
-			this.removeLife();
-        //  let guessed = $(e.target).text();
-       
-       //  $(e.target).prop("disabled", true);
-        //  if (this.activePhrase.checkLetter(guessed)){
-          
-        //     this.activePhrase.showMatchedLetter(guessed)
-            
-        //     $(event.target).addClass('chosen');
-        //     if (this.checkForWin()){
-        //         this.gameOver();
-        //     }
-        //     } else{
-        //     this.removeLife();
-        //     $(e.target).addClass('wrong');
-        // };
-        // this.checkLetter();
-        // this.showMatchedLetter();
-        // this.checkForWin();
-        // // this.removeLife();
-        // this.gameOver();
-        // this.resetGame();
-      }
-      checkForWin(){
-          let results = false;
-        if (parseInt($('#phrase ul .hide').length) === 0){
-            this.gameOver(true);
-           results = true;
-        } 
-            return results;
-    }     
+        if (this.activePhrase.checkLetter(guessed)) {														//displayed else a life is removed
+            this.activePhrase.showMatchedLetter(guessed)
+                this.checkForWin()
+                guessed.addClass('chosen')
+            }else {
+                this.removeLife();
+                guessed.addClass('wrong');
 
+            }    
+    }
+      checkForWin(){
+          
+        return $('#phrase ul .hide').length === 0  
+  }     
       removeLife(){
        
        const lives = $('#scoreboard li');
@@ -89,16 +69,15 @@ class Game {
             overlay.className = "lose"
         } else {
             $('.title').text("Congrats YOU WON!")
-            $('#game-over-message').text("''")
+            $('#game-over-message').text("'Winners Do What Losers Dont'")
             overlay.className = "win"
         }
         
     }
     resetGame(){
         $('#overlay').className = "start";
-        //$('#phrase ul').hide();
-        //lostLives.attr("src" , lives) 
+        $('#phrase ul .').hide();
     }
-
+  
 }
 //reset method()
