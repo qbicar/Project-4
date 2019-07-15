@@ -30,8 +30,10 @@ class Phrase {
         //if letter matches what is clicked
     }
     showMatchedLetter(guessed){
-const letter = document.querySelector(`.hide.${guessed}`);
-        letter.className = `show .letter ${guessed}`
-
+// const letter = document.querySelector(`.hide ${guessed}`);
+//         letter.className = `.show .letter ${guessed}`
+let rightLetter = $('#phrase ul .' + guessed)
+    rightLetter.removeClass('hide');
+    rightLetter.addClass('show');
     };
 };

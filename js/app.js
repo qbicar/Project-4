@@ -7,44 +7,27 @@
 
 let game;
 
- $("#btn__reset").click(function(){
-    $('#overlay').show();
-    game = new Game();
-     game.startGame();
-     game.resetGame();
+$("#btn__reset").click(function () {
+  $('#overlay').show();
+  game = new Game();
+  game.startGame();
+  game.resetGame();
 });
 
-const buttonDisable = guessed => {	
-  if	(guessed === true) {										//marks the received key
-	guessed.disabled = true;
-  guessed.className += ` chosen`;
+
+
+$("body").keydown(function (e) {
+  let pattern = /^[a-zA-Z]$/;
+  if (pattern.test(e.key)) {
+    game.handleInteraction(e.key)
   }
-}
+});
+
+$("#qwerty .key").on('click', function (e) {
+  game.handleInteraction(e);
+});
 
 
-const keyInt = e =>{
-  if (/^[a-zA-Z]$/.test(e.key)){											//in the game class instance
-		document.querySelectorAll('.key').forEach(button => {
-			if (button.textContent === e.key && !button.disabled){
-				game.handleInteraction(e.key);
-				buttonDisable(button);
-        return;
-      }
- })
-    }
- }
-
- document.addEventListener('keydown', keyInt) = e => {
-    game.handleInteraction(e);
- }
-$("#qwerty .key").on('click',function(e){
-  if (e.target.tagName === `BUTTON`){										//handles the interaction
-	buttonDisable(e.target);
-    game.handleInteraction(e.target.textContent);
-    
-	}
-  
-  });
 //make variable for keys
 //game win when all placeholders are correct
 //
