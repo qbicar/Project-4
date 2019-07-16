@@ -83,6 +83,7 @@ button {
 
 #phrase ul li{
   margin-top: 15px;
+  user-select: none;
 }
 
 /* Title */
@@ -215,8 +216,8 @@ filter: blur(0px);
 }
 
 .win {
-  background-image: url("https://insight.harlandclarke.com/wp-content/uploads/2014/03/birthday-balloons.jpg");
-  background-size: 1300px;
+  background-image: url("https://farm4.static.flickr.com/3826/8871463595_d9fb9fa2c4_b.jpg");
+  background-size: 1700px;
 }
 
 .win a {
@@ -225,7 +226,7 @@ filter: blur(0px);
 
 .lose {
   background-image: url("https://www.androidguys.com/wp-content/uploads/2016/04/Colorful-Wallpaper-3D-GV004.jpg");
-  background-size: 1300px;
+  background-size: 1700px;
 }
 
 .lose a {
