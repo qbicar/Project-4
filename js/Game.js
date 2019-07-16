@@ -30,7 +30,6 @@ class Game {
 
     }
     handleInteraction(e) {
-
         let guessed = $(e.target).text();
         $(e.target).prop("disabled", true);
         if (this.activePhrase.checkLetter(guessed)) {									//displayed 

@@ -16,12 +16,20 @@ $("#btn__reset").click(function () {
 
 
 
-$("body").keydown(function (e) {
-  let pattern = /^[a-zA-Z]$/;
-  if (pattern.test(e.key)) {
-    game.handleInteraction(e.key)
+document.addEventListener('keydown', function (event) {
+  const keyPressed = event.key.toLowerCase();
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const allKeys = document.getElementsByClassName('key');
+  if (alphabet.includes(keyPressed)) {
+      for (let key of allKeys) {
+          if (key.innerText == keyPressed) {
+              key.click();
+          }
+      }
   }
 });
+
+
 
 $("#qwerty .key").on('click', function (e) {
   game.handleInteraction(e);
